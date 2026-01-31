@@ -193,13 +193,8 @@
   .gallery-item:hover .g-overlay { opacity:1; }
   .gallery-item .g-label { color:var(--cream); font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; font-weight:500; }
 
-  /* gallery colour fills */
-  .g1 .g-bg { background:linear-gradient(135deg,#3d2520 0%,#6b3a2a 40%,#8b4513 100%); }
-  .g2 .g-bg { background:linear-gradient(135deg,#2a1f1a 0%,#5c3d2e 50%,#7a4a30 100%); }
-  .g3 .g-bg { background:linear-gradient(135deg,#3a2218 0%,#6e3b25 60%,#8a5030 100%); }
-  .g4 .g-bg { background:linear-gradient(135deg,#2d1e16 0%,#594530 50%,#7a5535 100%); }
-  .g5 .g-bg { background:linear-gradient(135deg,#352215 0%,#6a3d28 55%,#855a3a 100%); }
-  .g6 .g-bg { background:linear-gradient(135deg,#2f1d15 0%,#5a3825 50%,#7d4e32 100%); }
+  .gallery-item .g-bg { width:100%; height:100%; }
+  .gallery-item .g-bg svg { width:100%; height:100%; display:block; }
 
   /* ─── MENU ─── */
   .menu-section { padding:110px 48px; background:var(--cream); }
@@ -400,7 +395,46 @@
   <div class="about-inner">
     <div class="about-visual reveal">
       <div class="about-card">
-        <div class="about-card-inner"><div class="about-card-icon">🍲</div></div>
+        <div class="about-card-inner">
+          <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid meet" style="width:70%;max-width:320px;" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="abBroth" cx="50%" cy="40%" r="50%"><stop offset="0%" stop-color="#c47a2a"/><stop offset="60%" stop-color="#8b4513"/><stop offset="100%" stop-color="#5a2d0c"/></radialGradient>
+              <radialGradient id="abPot" cx="50%" cy="30%" r="60%"><stop offset="0%" stop-color="#6b5a4e"/><stop offset="100%" stop-color="#3d2e26"/></radialGradient>
+            </defs>
+            <!-- steam -->
+            <g opacity="0.4">
+              <ellipse cx="155" cy="155" rx="6" ry="28" fill="none" stroke="#e8c87a" stroke-width="2.5" stroke-linecap="round"/>
+              <ellipse cx="200" cy="138" rx="5" ry="35" fill="none" stroke="#e8c87a" stroke-width="2" stroke-linecap="round"/>
+              <ellipse cx="245" cy="150" rx="5.5" ry="30" fill="none" stroke="#e8c87a" stroke-width="2.5" stroke-linecap="round"/>
+            </g>
+            <!-- pot body -->
+            <ellipse cx="200" cy="370" rx="155" ry="38" fill="#3d2e26"/>
+            <path d="M45,260 Q45,370 200,390 Q355,370 355,260" fill="url(#abPot)" stroke="#2a1f16" stroke-width="3"/>
+            <!-- rim -->
+            <ellipse cx="200" cy="260" rx="155" ry="36" fill="#5a4a3e"/>
+            <ellipse cx="200" cy="256" rx="148" ry="30" fill="#4a3a2e"/>
+            <!-- broth -->
+            <ellipse cx="200" cy="258" rx="140" ry="27" fill="url(#abBroth)"/>
+            <ellipse cx="185" cy="252" rx="52" ry="8" fill="rgba(255,200,100,0.12)"/>
+            <!-- lamb -->
+            <ellipse cx="155" cy="250" rx="20" ry="12" fill="#7a3b1e" transform="rotate(-10,155,250)"/>
+            <ellipse cx="205" cy="244" rx="22" ry="11" fill="#8a4522" transform="rotate(6,205,244)"/>
+            <ellipse cx="250" cy="252" rx="18" ry="11" fill="#6e3318" transform="rotate(-4,250,252)"/>
+            <ellipse cx="175" cy="264" rx="19" ry="10" fill="#854020" transform="rotate(8,175,264)"/>
+            <!-- greens -->
+            <ellipse cx="135" cy="255" rx="13" ry="6" fill="#4a8a3a" transform="rotate(-18,135,255)"/>
+            <ellipse cx="270" cy="248" rx="11" ry="5" fill="#5a9a4a" transform="rotate(12,270,248)"/>
+            <ellipse cx="220" cy="268" rx="10" ry="5" fill="#3d7a2e" transform="rotate(-8,220,268)"/>
+            <!-- chili -->
+            <ellipse cx="190" cy="258" rx="5" ry="2.2" fill="#c0392b" transform="rotate(-22,190,258)"/>
+            <ellipse cx="240" cy="255" rx="4" ry="2" fill="#c0392b" transform="rotate(12,240,255)"/>
+            <!-- handles -->
+            <path d="M45,280 Q18,280 18,305 Q18,330 45,330" fill="none" stroke="#3d2e26" stroke-width="14" stroke-linecap="round"/>
+            <path d="M355,280 Q382,280 382,305 Q382,330 355,330" fill="none" stroke="#3d2e26" stroke-width="14" stroke-linecap="round"/>
+            <!-- glow -->
+            <ellipse cx="200" cy="385" rx="120" ry="16" fill="rgba(180,100,30,0.2)"/>
+          </svg>
+        </div>
       </div>
       <div class="about-badge"><div class="bn">4.7</div><div class="bl">Stars</div></div>
     </div>
@@ -421,12 +455,229 @@
     <p>A glimpse into the dishes and atmosphere that keep our guests coming back.</p>
   </div>
   <div class="gallery-grid">
-    <div class="gallery-item g1 reveal"><div class="g-bg"></div><div class="g-overlay"><span class="g-label">Satay Lamb Hot Pot</span></div></div>
-    <div class="gallery-item g2 reveal"><div class="g-bg"></div><div class="g-overlay"><span class="g-label">Three Cup Chicken</span></div></div>
-    <div class="gallery-item g3 reveal"><div class="g-bg"></div><div class="g-overlay"><span class="g-label">Deep Fried Tofu</span></div></div>
-    <div class="gallery-item g4 reveal"><div class="g-bg"></div><div class="g-overlay"><span class="g-label">Herbal Lamb Pot</span></div></div>
-    <div class="gallery-item g5 reveal"><div class="g-bg"></div><div class="g-overlay"><span class="g-label">Seafood Udon</span></div></div>
-    <div class="gallery-item g6 reveal"><div class="g-bg"></div><div class="g-overlay"><span class="g-label">The Atmosphere</span></div></div>
+    <!-- 1: Satay Lamb Hot Pot (big hero tile) -->
+    <div class="gallery-item g1 reveal">
+      <div class="g-bg">
+        <svg viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bg1" cx="50%" cy="50%" r="70%"><stop offset="0%" stop-color="#3d2520"/><stop offset="100%" stop-color="#1a0f0a"/></radialGradient>
+            <radialGradient id="broth1" cx="50%" cy="40%" r="50%"><stop offset="0%" stop-color="#c47a2a"/><stop offset="60%" stop-color="#8b4513"/><stop offset="100%" stop-color="#5a2d0c"/></radialGradient>
+            <radialGradient id="pot1" cx="50%" cy="30%" r="60%"><stop offset="0%" stop-color="#6b5a4e"/><stop offset="100%" stop-color="#3d2e26"/></radialGradient>
+          </defs>
+          <rect width="800" height="800" fill="url(#bg1)"/>
+          <!-- steam -->
+          <g opacity="0.35">
+            <ellipse cx="320" cy="240" rx="8" ry="30" fill="none" stroke="#e8c87a" stroke-width="3" style="animation:rise 3s ease-in-out infinite"/>
+            <ellipse cx="400" cy="220" rx="6" ry="40" fill="none" stroke="#e8c87a" stroke-width="2.5" style="animation:rise 3.5s ease-in-out infinite 0.5s"/>
+            <ellipse cx="480" cy="235" rx="7" ry="32" fill="none" stroke="#e8c87a" stroke-width="3" style="animation:rise 2.8s ease-in-out infinite 1s"/>
+          </g>
+          <!-- clay pot body -->
+          <ellipse cx="400" cy="560" rx="240" ry="60" fill="#3d2e26"/>
+          <path d="M160,420 Q160,560 400,580 Q640,560 640,420" fill="url(#pot1)" stroke="#2a1f16" stroke-width="4"/>
+          <!-- pot rim -->
+          <ellipse cx="400" cy="420" rx="240" ry="55" fill="#5a4a3e"/>
+          <ellipse cx="400" cy="415" rx="230" ry="48" fill="#4a3a2e"/>
+          <!-- broth surface -->
+          <ellipse cx="400" cy="418" rx="215" ry="42" fill="url(#broth1)"/>
+          <!-- broth shimmer -->
+          <ellipse cx="370" cy="410" rx="80" ry="12" fill="rgba(255,200,100,0.15)"/>
+          <!-- lamb chunks -->
+          <ellipse cx="310" cy="405" rx="22" ry="14" fill="#7a3b1e" transform="rotate(-10,310,405)"/>
+          <ellipse cx="370" cy="395" rx="25" ry="13" fill="#8a4522" transform="rotate(5,370,395)"/>
+          <ellipse cx="440" cy="408" rx="20" ry="12" fill="#6e3318" transform="rotate(-5,440,408)"/>
+          <ellipse cx="490" cy="398" rx="18" ry="11" fill="#7a3b1e" transform="rotate(8,490,398)"/>
+          <ellipse cx="340" cy="425" rx="21" ry="12" fill="#854020" transform="rotate(-3,340,425)"/>
+          <!-- greens -->
+          <ellipse cx="280" cy="412" rx="16" ry="8" fill="#4a8a3a" transform="rotate(-15,280,412)"/>
+          <ellipse cx="510" cy="405" rx="14" ry="7" fill="#5a9a4a" transform="rotate(10,510,405)"/>
+          <ellipse cx="420" cy="430" rx="12" ry="6" fill="#3d7a2e" transform="rotate(20,420,430)"/>
+          <!-- chili bits -->
+          <ellipse cx="350" cy="415" rx="5" ry="2.5" fill="#c0392b" transform="rotate(-20,350,415)"/>
+          <ellipse cx="460" cy="410" rx="4" ry="2" fill="#c0392b" transform="rotate(15,460,410)"/>
+          <!-- pot handles -->
+          <path d="M160,440 Q120,440 120,470 Q120,500 160,500" fill="none" stroke="#3d2e26" stroke-width="18" stroke-linecap="round"/>
+          <path d="M640,440 Q680,440 680,470 Q680,500 640,500" fill="none" stroke="#3d2e26" stroke-width="18" stroke-linecap="round"/>
+          <!-- ambient glow under pot -->
+          <ellipse cx="400" cy="590" rx="180" ry="25" fill="rgba(180,100,30,0.25)"/>
+        </svg>
+      </div>
+      <div class="g-overlay"><span class="g-label">Satay Lamb Hot Pot</span></div>
+    </div>
+
+    <!-- 2: Three Cup Chicken -->
+    <div class="gallery-item g2 reveal">
+      <div class="g-bg">
+        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bg2" cx="50%" cy="50%" r="70%"><stop offset="0%" stop-color="#2a2018"/><stop offset="100%" stop-color="#140d08"/></radialGradient>
+          </defs>
+          <rect width="400" height="400" fill="url(#bg2)"/>
+          <!-- plate -->
+          <ellipse cx="200" cy="260" rx="150" ry="38" fill="#2e2420"/>
+          <ellipse cx="200" cy="255" rx="148" ry="36" fill="#3a2e26"/>
+          <ellipse cx="200" cy="252" rx="130" ry="30" fill="#4a3f35"/>
+          <!-- sauce pool -->
+          <ellipse cx="200" cy="250" rx="115" ry="24" fill="#5c3a18"/>
+          <ellipse cx="200" cy="248" rx="110" ry="22" fill="#6b4420"/>
+          <!-- chicken pieces -->
+          <ellipse cx="160" cy="240" rx="28" ry="18" fill="#8b5e2a" transform="rotate(-12,160,240)"/>
+          <ellipse cx="220" cy="235" rx="30" ry="16" fill="#9a6830" transform="rotate(8,220,235)"/>
+          <ellipse cx="250" cy="248" rx="24" ry="15" fill="#854f25" transform="rotate(-5,250,248)"/>
+          <ellipse cx="145" cy="255" rx="22" ry="14" fill="#7a5522" transform="rotate(15,145,255)"/>
+          <ellipse cx="200" cy="250" rx="26" ry="14" fill="#906030" transform="rotate(-8,200,250)"/>
+          <!-- basil leaves -->
+          <ellipse cx="175" cy="232" rx="10" ry="5" fill="#2e7d32" transform="rotate(-20,175,232)"/>
+          <ellipse cx="240" cy="240" rx="9" ry="4.5" fill="#388e3c" transform="rotate(15,240,240)"/>
+          <ellipse cx="210" cy="258" rx="8" ry="4" fill="#2e7d32" transform="rotate(-10,210,258)"/>
+          <ellipse cx="130" cy="248" rx="7" ry="3.5" fill="#43a047" transform="rotate(25,130,248)"/>
+          <!-- sesame seeds -->
+          <circle cx="185" cy="245" r="2" fill="#e8d5a0"/>
+          <circle cx="210" cy="242" r="1.8" fill="#e8d5a0"/>
+          <circle cx="230" cy="250" r="2" fill="#dbc890"/>
+          <circle cx="165" cy="250" r="1.5" fill="#e8d5a0"/>
+        </svg>
+      </div>
+      <div class="g-overlay"><span class="g-label">Three Cup Chicken</span></div>
+    </div>
+
+    <!-- 3: Deep Fried Tofu -->
+    <div class="gallery-item g3 reveal">
+      <div class="g-bg">
+        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bg3" cx="50%" cy="50%" r="70%"><stop offset="0%" stop-color="#2d2118"/><stop offset="100%" stop-color="#120e0a"/></radialGradient>
+          </defs>
+          <rect width="400" height="400" fill="url(#bg3)"/>
+          <!-- plate -->
+          <ellipse cx="200" cy="265" rx="145" ry="35" fill="#2a2018"/>
+          <ellipse cx="200" cy="260" rx="143" ry="33" fill="#352a22"/>
+          <ellipse cx="200" cy="257" rx="125" ry="28" fill="#4a3f35"/>
+          <!-- tofu cubes stacked -->
+          <rect x="148" y="225" width="38" height="38" rx="4" fill="#d4a030" transform="rotate(-8,167,244)"/>
+          <rect x="148" y="225" width="38" height="38" rx="4" fill="#c89028" transform="rotate(-8,167,244)" clip-path="inset(0 0 50% 0)"/>
+          <rect x="195" y="220" width="40" height="40" rx="4" fill="#daa832" transform="rotate(5,215,240)"/>
+          <rect x="195" y="220" width="40" height="40" rx="4" fill="#c89028" transform="rotate(5,215,240)" clip-path="inset(0 0 50% 0)"/>
+          <rect x="240" y="228" width="36" height="36" rx="4" fill="#d4a030" transform="rotate(-3,258,246)"/>
+          <rect x="165" y="248" width="38" height="34" rx="4" fill="#c89028" transform="rotate(6,184,265)"/>
+          <rect x="215" y="250" width="36" height="34" rx="4" fill="#d4a030" transform="rotate(-10,233,267)"/>
+          <!-- kimchi pieces (pink/red) -->
+          <ellipse cx="155" cy="240" rx="12" ry="7" fill="#c0392b" transform="rotate(-15,155,240)" opacity="0.85"/>
+          <ellipse cx="260" cy="242" rx="10" ry="6" fill="#e74c3c" transform="rotate(10,260,242)" opacity="0.85"/>
+          <ellipse cx="200" cy="258" rx="11" ry="5" fill="#c0392b" transform="rotate(-5,200,258)" opacity="0.8"/>
+          <!-- green onion -->
+          <ellipse cx="180" cy="235" rx="8" ry="3" fill="#7cb342" transform="rotate(20,180,235)"/>
+          <ellipse cx="235" cy="248" rx="7" ry="2.5" fill="#8bc34a" transform="rotate(-12,235,248)"/>
+        </svg>
+      </div>
+      <div class="g-overlay"><span class="g-label">Deep Fried Tofu</span></div>
+    </div>
+
+    <!-- 4: Herbal Lamb Pot -->
+    <div class="gallery-item g4 reveal">
+      <div class="g-bg">
+        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bg4" cx="50%" cy="50%" r="70%"><stop offset="0%" stop-color="#261c14"/><stop offset="100%" stop-color="#100a06"/></radialGradient>
+            <radialGradient id="broth4" cx="50%" cy="40%" r="50%"><stop offset="0%" stop-color="#8b6914"/><stop offset="100%" stop-color="#5a4010"/></radialGradient>
+          </defs>
+          <rect width="400" height="400" fill="url(#bg4)"/>
+          <!-- clay pot -->
+          <ellipse cx="200" cy="290" rx="120" ry="30" fill="#3d2e26"/>
+          <path d="M80,220 Q80,290 200,305 Q320,290 320,220" fill="#4a3a2e" stroke="#2a1f16" stroke-width="3"/>
+          <ellipse cx="200" cy="220" rx="120" ry="28" fill="#5a4a3e"/>
+          <ellipse cx="200" cy="217" rx="115" ry="24" fill="url(#broth4)"/>
+          <!-- herbs floating -->
+          <ellipse cx="170" cy="212" rx="14" ry="5" fill="#3a6b2a" transform="rotate(-18,170,212)"/>
+          <ellipse cx="220" cy="208" rx="12" ry="4.5" fill="#4a7b3a" transform="rotate(12,220,208)"/>
+          <ellipse cx="195" cy="220" rx="10" ry="4" fill="#2d5a1f" transform="rotate(-5,195,220)"/>
+          <ellipse cx="245" cy="215" rx="9" ry="3.5" fill="#3a6b2a" transform="rotate(20,245,215)"/>
+          <!-- lamb -->
+          <ellipse cx="185" cy="210" rx="18" ry="10" fill="#6b3318" transform="rotate(-8,185,210)"/>
+          <ellipse cx="215" cy="215" rx="16" ry="9" fill="#7a3b1e" transform="rotate(5,215,215)"/>
+          <!-- star anise -->
+          <polygon points="200,195 203,203 212,203 205,208 207,216 200,212 193,216 195,208 188,203 197,203" fill="#8b6914" stroke="#c8975a" stroke-width="1"/>
+          <!-- pot handles -->
+          <path d="M80,235 Q60,235 60,250 Q60,265 80,265" fill="none" stroke="#3d2e26" stroke-width="10" stroke-linecap="round"/>
+          <path d="M320,235 Q340,235 340,250 Q340,265 320,265" fill="none" stroke="#3d2e26" stroke-width="10" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="g-overlay"><span class="g-label">Herbal Lamb Pot</span></div>
+    </div>
+
+    <!-- 5: Seafood Udon -->
+    <div class="gallery-item g5 reveal">
+      <div class="g-bg">
+        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bg5" cx="50%" cy="50%" r="70%"><stop offset="0%" stop-color="#2a1e14"/><stop offset="100%" stop-color="#120c06"/></radialGradient>
+          </defs>
+          <rect width="400" height="400" fill="url(#bg5)"/>
+          <!-- bowl -->
+          <ellipse cx="200" cy="275" rx="140" ry="35" fill="#2a2018"/>
+          <path d="M60,230 Q60,275 200,295 Q340,275 340,230" fill="#3a2e24" stroke="#2a1f16" stroke-width="3"/>
+          <ellipse cx="200" cy="230" rx="140" ry="32" fill="#4a3f35"/>
+          <!-- broth -->
+          <ellipse cx="200" cy="228" rx="132" ry="28" fill="#6b4a20"/>
+          <!-- udon noodles -->
+          <path d="M100,222 Q140,215 180,225 Q220,235 260,220 Q290,210 320,225" fill="none" stroke="#e8d5a0" stroke-width="5" stroke-linecap="round"/>
+          <path d="M110,230 Q150,240 190,228 Q230,218 270,232 Q300,240 325,228" fill="none" stroke="#dbc890" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M90,218 Q130,208 170,220 Q210,230 250,215 Q280,205 310,218" fill="none" stroke="#e8d5a0" stroke-width="4" stroke-linecap="round"/>
+          <!-- shrimp -->
+          <path d="M150,215 Q145,205 155,200 Q165,205 160,215" fill="#e8756a" stroke="#c0392b" stroke-width="1.5"/>
+          <path d="M240,218 Q235,208 245,204 Q255,208 250,218" fill="#e8756a" stroke="#c0392b" stroke-width="1.5"/>
+          <!-- green onion rings -->
+          <circle cx="175" cy="220" r="4" fill="#7cb342"/>
+          <circle cx="220" cy="225" r="3.5" fill="#8bc34a"/>
+          <circle cx="260" cy="218" r="4" fill="#7cb342"/>
+          <circle cx="140" cy="228" r="3" fill="#8bc34a"/>
+          <!-- sesame -->
+          <circle cx="200" cy="222" r="2" fill="#e8d5a0"/>
+          <circle cx="185" cy="230" r="1.8" fill="#dbc890"/>
+        </svg>
+      </div>
+      <div class="g-overlay"><span class="g-label">Seafood Udon</span></div>
+    </div>
+
+    <!-- 6: Restaurant Atmosphere -->
+    <div class="gallery-item g6 reveal">
+      <div class="g-bg">
+        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bg6" cx="50%" cy="30%" r="80%"><stop offset="0%" stop-color="#3a2518"/><stop offset="100%" stop-color="#1a0f08"/></radialGradient>
+            <radialGradient id="lamp1" cx="50%" cy="0%" r="100%"><stop offset="0%" stop-color="#e8c87a" stop-opacity="0.6"/><stop offset="100%" stop-color="#e8c87a" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect width="400" height="400" fill="url(#bg6)"/>
+          <!-- warm light pools on ceiling -->
+          <ellipse cx="100" cy="0" rx="80" ry="60" fill="url(#lamp1)"/>
+          <ellipse cx="300" cy="0" rx="70" ry="55" fill="url(#lamp1)"/>
+          <!-- hanging lanterns -->
+          <line x1="100" y1="0" x2="100" y2="60" stroke="#8b6914" stroke-width="1.5"/>
+          <ellipse cx="100" cy="75" rx="18" ry="22" fill="#c8975a" opacity="0.9"/>
+          <ellipse cx="100" cy="75" rx="14" ry="18" fill="#e8c87a" opacity="0.7"/>
+          <line x1="300" y1="0" x2="300" y2="50" stroke="#8b6914" stroke-width="1.5"/>
+          <ellipse cx="300" cy="65" rx="16" ry="20" fill="#c8975a" opacity="0.9"/>
+          <ellipse cx="300" cy="65" rx="12" ry="16" fill="#e8c87a" opacity="0.7"/>
+          <!-- table -->
+          <rect x="80" y="280" width="240" height="8" rx="2" fill="#5a4a3e"/>
+          <rect x="90" y="288" width="220" height="6" rx="1" fill="#4a3a2e"/>
+          <!-- table items -->
+          <!-- chopsticks -->
+          <line x1="120" y1="270" x2="145" y2="280" stroke="#e8d5a0" stroke-width="3" stroke-linecap="round"/>
+          <line x1="125" y1="268" x2="150" y2="278" stroke="#dbc890" stroke-width="3" stroke-linecap="round"/>
+          <!-- small bowl -->
+          <ellipse cx="250" cy="272" rx="28" ry="10" fill="#4a3a2e"/>
+          <ellipse cx="250" cy="270" rx="26" ry="9" fill="#5a4a3e"/>
+          <ellipse cx="250" cy="269" rx="22" ry="7" fill="#6b4a20"/>
+          <!-- tea cup -->
+          <rect x="180" y="255" width="24" height="20" rx="3" fill="#5a4a3e"/>
+          <ellipse cx="192" cy="255" rx="12" ry="4" fill="#4a3a2e"/>
+          <ellipse cx="192" cy="255" rx="10" ry="3" fill="#7a6540"/>
+          <!-- warm ambient glow -->
+          <ellipse cx="200" cy="350" rx="160" ry="40" fill="rgba(200,151,90,0.08)"/>
+        </svg>
+      </div>
+      <div class="g-overlay"><span class="g-label">The Atmosphere</span></div>
+    </div>
   </div>
 </section>
 
